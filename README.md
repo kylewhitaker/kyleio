@@ -15,7 +15,7 @@
 
 #### TODO
 
-1. Fix responsive navigation on mobile.
+1. ~~Fix responsive navigation on mobile.~~
 2. Add a blog. Begin generating content.
 
 ---
