@@ -18,9 +18,9 @@
 
 1. ~~Fix responsive navigation on mobile.~~ Close drop-down nav window on clicks.
 2. ~~Add a blog.~~ Generate real content. ~~Fix non-existent blog id navigation, should be 404.~~
-3. ~~Refactor links into a single 'Resume' link. Home page design (replace Dwayne).~~ Refactor horizontal navigation.
+3. ~~Refactor links into a single 'Resume' link. Home page design (replace Dwayne). Refactor horizontal navigation.~~
 4. ~~Add unit tests.~~ Use TDD.
 5. Add API + DB.
 
 ---
-Last updated Jan. 9, 2018
+Last updated Jan. 10, 2018
