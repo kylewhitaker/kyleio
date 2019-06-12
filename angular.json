@@ -21,10 +21,14 @@
             "aot": false,
             "assets": [
               "src/assets",
-              { "glob": "CNAME", "input": "./", "output": "./" }
+              {
+                "glob": "CNAME",
+                "input": "./",
+                "output": "./"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -87,7 +91,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "../node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -120,6 +124,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "kyle-io2"
+    }
+  },
+  "defaultProject": "kyle-io2",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
