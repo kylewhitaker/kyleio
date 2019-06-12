@@ -9,11 +9,11 @@
  </g>
  <g>
   <title>Layer 1</title>
-  <path stroke="#f8f9fa" transform="rotate(180 199,166.99998474121094) " id="svg_39" d="m8.65529,324.93095l71.37927,-315.8619l237.93092,0l71.37925,315.8619l-380.68944,0z" fill-opacity="null" stroke-width="10" fill="none"/>
-  <path id="svg_30" d="m46.931037,104.005336c92,1 86,228 110,201c24,-27 22,-145 45,-145c23,0 11,116 42,144c31,28 24,-199 103,-199" fill-opacity="null" stroke-width="15" stroke="#f8f9fa" fill="none"/>
+  <path stroke="#f2f2f2" transform="rotate(180 199,166.99998474121094) " id="svg_39" d="m8.65529,324.93095l71.37927,-315.8619l237.93092,0l71.37925,315.8619l-380.68944,0z" fill-opacity="null" stroke-width="10" fill="none"/>
+  <path id="svg_30" d="m46.931037,104.005336c92,1 86,228 110,201c24,-27 22,-145 45,-145c23,0 11,116 42,144c31,28 24,-199 103,-199" fill-opacity="null" stroke-width="15" stroke="#f2f2f2" fill="none"/>
   <path id="svg_31" fill-opacity="null" stroke-opacity="null" stroke-width="10" stroke="#000" fill="none"/>
   <path id="svg_32" fill-opacity="null" stroke-opacity="null" stroke-width="10" stroke="#000" fill="none"/>
-  <path transform="rotate(90 196.8831481933594,107.9448699951172) " id="svg_33" d="m119.883151,47.163615c78.58481,39.77749 79.8625,122.12243 79.5,129.5625c-1.66388,-54.07836 -1.5,-89.5625 74.5,-137.5625" fill-opacity="null" stroke-width="15" stroke="#f8f9fa" fill="none"/>
-  <line stroke="#f8f9fa" stroke-linecap="null" stroke-linejoin="null" id="svg_36" y2="193.624132" x2="150.926648" y1="23.319023" x1="151.532708" fill-opacity="null" stroke-width="15" fill="none"/>
+  <path transform="rotate(90 196.8831481933594,107.9448699951172) " id="svg_33" d="m119.883151,47.163615c78.58481,39.77749 79.8625,122.12243 79.5,129.5625c-1.66388,-54.07836 -1.5,-89.5625 74.5,-137.5625" fill-opacity="null" stroke-width="15" stroke="#f2f2f2" fill="none"/>
+  <line stroke="#f2f2f2" stroke-linecap="null" stroke-linejoin="null" id="svg_36" y2="193.624132" x2="150.926648" y1="23.319023" x1="151.532708" fill-opacity="null" stroke-width="15" fill="none"/>
  </g>
 </svg>
