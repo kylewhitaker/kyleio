@@ -43,8 +43,8 @@ $navbar-light-toggler-border-color: $dark !default;
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-image: url('assets/beach.jpg');
+  // background-image: url('assets/beach.jpg');
   background-size: 100vw;
   background-repeat: no-repeat;
-  background-color: $primary;
+  background-color: $light;
 }

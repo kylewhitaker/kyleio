@@ -1,0 +1,10 @@
+<div class="jumbotron bg-dark" style="margin-top:60px;">
+  <img src="assets/my_logo.png" style="width:70vw;max-width:450px;">
+  <p class="lead text-secondary mx-2">{{ roles$ | async }}</p>
+  <hr class="my-4 bg-primary">
+  <p class="lead">
+    <a class="mx-2 mb-4 btn btn-secondary btn-lg border border-light text-dark" (click)="open('resume')" role="button">Resume</a>
+    <a class="mx-2 mb-4 btn btn-dark btn-lg border border-light text-secondary" (click)="open('github')" role="button">GitHub</a>
+    <a class="mx-2 mb-4 btn btn-dark btn-lg border border-light text-secondary" (click)="open('linkedin')" role="button">LinkedIn</a>
+  </p>
+</div>
