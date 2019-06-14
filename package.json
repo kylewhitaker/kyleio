@@ -12,7 +12,7 @@
     "deploy:qa": "npx ngh --dir=dist/kyle-io2",
     "bdq": "npm run build:qa && npm run deploy:qa",
     "build:prod": "ng build --prod",
-    "deploy:prod": "sudo ngh --repo='https://github.com/kylewhitaker/kylewhitaker.github.io' --branch=master",
+    "deploy:prod": "npx ngh --dir=dist/kyle-io2 --repo='https://github.com/kylewhitaker/kylewhitaker.github.io' --branch=master",
     "bdp": "npm run build:prod && npm run deploy:prod",
     "bda": "npm run bdq && npm run bdp"
   },
