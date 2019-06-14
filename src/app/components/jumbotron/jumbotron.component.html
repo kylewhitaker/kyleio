@@ -1,10 +1,22 @@
 <div class="jumbotron bg-dark" style="margin-top:60px;">
-  <img src="assets/my_logo.png" style="width:70vw;max-width:450px;">
-  <p class="lead text-secondary mx-2">{{ roles$ | async }}</p>
-  <hr class="my-4 bg-primary">
-  <p class="lead">
-    <a class="mx-2 mb-4 btn btn-secondary btn-lg border border-light text-dark" (click)="open('resume')" role="button">Resume</a>
-    <a class="mx-2 mb-4 btn btn-dark btn-lg border border-light text-secondary" (click)="open('github')" role="button">GitHub</a>
-    <a class="mx-2 mb-4 btn btn-dark btn-lg border border-light text-secondary" (click)="open('linkedin')" role="button">LinkedIn</a>
-  </p>
+  <div class="container">
+    <div class="row justify-content-center">
+      <img src="assets/my_logo.png" style="height:51px;width:300px;">
+      <!-- <img src="assets/my_logo.png" style="width:70vw;max-width:450px;"> -->
+    </div>
+    <div class="row justify-content-center">
+      <div class="lead text-secondary mt-2">{{ roles$ | async }}</div>
+    </div>
+    <hr class="my-4 bg-primary">
+    <div class="row justify-content-center">
+      <p class="lead">
+        <a class="mx-2 mb-4 btn btn-secondary btn-md border border-light text-dark" (click)="open('resume')"
+          role="button">Resume</a>
+        <a class="mx-2 mb-4 btn btn-dark btn-md border border-light text-secondary" (click)="open('github')"
+          role="button">GitHub</a>
+        <a class="mx-2 mb-4 btn btn-dark btn-md border border-light text-secondary" (click)="open('linkedin')"
+          role="button">LinkedIn</a>
+      </p>
+    </div>
+  </div>
 </div>
