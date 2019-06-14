@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { Observable, BehaviorSubject, of, timer } from 'rxjs';
-import { switchMap, delay, map, mergeMap, take, finalize } from 'rxjs/operators';
+import { Observable, BehaviorSubject, timer } from 'rxjs';
+import { map, mergeMap, take, finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-jumbotron',
   templateUrl: './jumbotron.component.html'
 })
 export class JumbotronComponent {
+
+  cursor$: Observable<string> = timer(0, 600).pipe(
+    map(val => val % 2 === 0 ? 'text-light' : 'text-dark')
+  );
 
   roles: string[][] = [
     ['software developer', 'cleveland, ohio'],
@@ -15,24 +19,38 @@ export class JumbotronComponent {
     .map(x => x.join(' | '))
     .map(x => this.buildup(x));
 
-  trigger$ = new BehaviorSubject<any>('');
+  trigger$ = new BehaviorSubject<number>(this.roles.length);
 
   roles$: Observable<string> = this.trigger$.pipe(
-    switchMap((val, idx) => idx > 0 ? of(val).pipe(delay(2000)) : of(val)),
-    map((val, idx) => this.roles[idx % this.roles.length]),
-    mergeMap(arr => timer(0, 50).pipe(
-      take(arr.length),
-      map(n => arr[n]),
-      finalize(() => this.trigger$.next(''))
-    ))
+    map(val => ({ val, arr: this.roles[Math.abs(val % this.roles.length)] })),
+    mergeMap(({ val, arr }) => val > 0
+      ? this.type(val, arr, 500, 70)
+      : this.delete(val, arr, 2500, 25)
+    )
   );
 
   buildup(s: string): string[] {
     const arr = [];
-    for (let i = 1; i <= s.length; i++) {
+    for (let i = 0; i <= s.length; i++) {
       arr.push(s.substring(0, i));
     }
     return arr;
+  }
+
+  type(val: number, arr: string[], wait: number, period: number): Observable<string> {
+    return timer(wait, period).pipe(
+      take(arr.length),
+      map(n => arr[n]),
+      finalize(() => this.trigger$.next(val * -1))
+    );
+  }
+
+  delete(val: number, arr: string[], wait: number, period: number): Observable<string> {
+    return timer(wait, period).pipe(
+      take(arr.length),
+      map(n => arr[arr.length - n - 1]),
+      finalize(() => this.trigger$.next(val * -1 + 1))
+    );
   }
 
   open(uri: string): void {
@@ -51,4 +69,5 @@ export class JumbotronComponent {
         break;
     }
   }
+
 }
