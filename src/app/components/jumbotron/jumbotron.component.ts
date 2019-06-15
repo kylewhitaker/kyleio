@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, timer } from 'rxjs';
 import { map, mergeMap, take, finalize } from 'rxjs/operators';
 
@@ -28,6 +29,8 @@ export class JumbotronComponent {
       : this.delete(val, arr, 2500, 25)
     )
   );
+
+  constructor(private http: HttpClient) { }
 
   buildup(s: string): string[] {
     const arr = [];
@@ -68,6 +71,13 @@ export class JumbotronComponent {
         alert('Sorry, this option is not currently available.');
         break;
     }
+  }
+
+  sendemail(): void {
+    this.http.post('http://localhost:8000/email', null).subscribe({
+      next: (response) => console.log('success:', response),
+      error: (err) => console.log('error:', err)
+    });
   }
 
 }
