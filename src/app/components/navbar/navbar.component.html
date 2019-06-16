@@ -1,6 +1,6 @@
 <ng-container *ngFor="let tc of themeColors">
   <nav [ngClass]="['navbar', 'fixed-top', 'navbar-expand-sm', !isDark(tc) ? 'navbar-light' : 'navbar-dark', 'bg-' + tc]">
-    <a class="navbar-brand">
+    <a class="navbar-brand" routerLink="">
       <img [src]="!isDark(tc) ? 'assets/icon-blue-007bff.svg' : 'assets/icon-white-f8f9fa.svg'"
         style="max-width:2.5rem">
     </a>
@@ -11,10 +11,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a [ngClass]="['nav-link', !isDark(tc) ? 'text-dark' : 'text-light']" href="#">Portfolio</a>
+          <a [ngClass]="['nav-link', !isDark(tc) ? 'text-dark' : 'text-light']" routerLink="portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a [ngClass]="['nav-link', !isDark(tc)? 'text-dark' : 'text-light']" href="#">Contact</a>
+          <a [ngClass]="['nav-link', !isDark(tc)? 'text-dark' : 'text-light']" routerLink="contact">Contact</a>
         </li>
       </ul>
     </div>

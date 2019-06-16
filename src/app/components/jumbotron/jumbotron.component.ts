@@ -73,11 +73,4 @@ export class JumbotronComponent {
     }
   }
 
-  sendemail(): void {
-    this.http.post('http://localhost:8000/email', null).subscribe({
-      next: (response) => console.log('success:', response),
-      error: (err) => console.log('error:', err)
-    });
-  }
-
 }
