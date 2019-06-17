@@ -1,15 +1,15 @@
 <form (ngSubmit)="sendEmail()" class="mx-5" style="margin-top:80px;">
   <div class="form-group">
-    <input type="text" class="form-control" id="name" placeholder="Name">
+    <input type="text" class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="contact.name">
   </div>
   <div class="form-group">
-    <input type="email" class="form-control" id="email" placeholder="Email">
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email" [(ngModel)]="contact.email">
   </div>
   <div class="form-group">
-    <input type="text" class="form-control" id="email" placeholder="Subject">
+    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" [(ngModel)]="contact.subject">
   </div>
   <div class="form-group">
-    <textarea class="form-control" id="message" rows="5" placeholder="Message"></textarea>
+    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message" [(ngModel)]="contact.message"></textarea>
   </div>
   <div class="d-flex justify-content-center">
     <button type="submit" class="btn btn-primary">Send Message</button>
