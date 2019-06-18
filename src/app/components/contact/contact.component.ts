@@ -17,8 +17,8 @@ export class ContactComponent {
 
   roles: string[][] = [
     ['Need help? Hire me!'],
-    ['Got a cool idea? I can make it a reality!'],
-    [`Don't be a stranger...say hello!`],
+    ['Have an idea? I can help!'],
+    [`Don't be a stranger. Say hello!`],
   ];
 
   contactForm = this.fb.group({
