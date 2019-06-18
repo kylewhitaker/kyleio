@@ -11,8 +11,19 @@ export class AnimatedTypingComponent implements OnInit, AfterViewInit {
 
   // tslint:disable-next-line:variable-name
   private _roles: string[][];
+  // tslint:disable-next-line:variable-name
+  private _text: string;
 
   @Input() cursor: 'light' | 'dark';
+
+  @Input()
+  set text(value: string) {
+    this._text = `text-${value}`;
+  }
+  get text(): string {
+    return this._text;
+  }
+
   @Input()
   set roles(value: string[][]) {
     this._roles = value
