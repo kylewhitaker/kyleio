@@ -1,0 +1,5 @@
+@import "styles";
+
+.hide-cursor {
+  color: transparentize($color: $light, $amount: 1)
+}

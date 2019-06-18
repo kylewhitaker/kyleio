@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AnimatedTypingComponent } from './components/animated-typing/animated-typing.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContactComponent } from './components/contact/contact.component';
     ContactComponent,
     HomeComponent,
     JumbotronComponent,
-    NavbarComponent
+    NavbarComponent,
+    AnimatedTypingComponent
   ],
   imports: [
     BrowserModule,
