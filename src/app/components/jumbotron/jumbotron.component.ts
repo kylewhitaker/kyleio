@@ -11,7 +11,7 @@ export class JumbotronComponent {
 
   roles: string[][] = [
     ['software developer', 'cleveland, ohio'],
-    ['catholic', 'husband', 'father', 'programmer']
+    ['catholic', 'husband', 'father'],
   ];
 
   constructor(private http: HttpClient) { }
