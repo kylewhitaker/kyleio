@@ -15,6 +15,12 @@ const customEmailValidator: ValidatorFn = (control) => {
 })
 export class ContactComponent {
 
+  roles: string[][] = [
+    ['Need help? Hire me!'],
+    ['Got a cool idea? I can make it a reality!'],
+    [`Don't be a stranger...say hello!`],
+  ];
+
   contactForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.required, customEmailValidator]],
