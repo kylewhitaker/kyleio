@@ -6,14 +6,14 @@ import { Component, ViewContainerRef, ElementRef, ViewChild } from '@angular/cor
 })
 export class NavbarComponent {
   themeColors = [
-    'primary',
+    // 'primary',
     // 'secondary',
     // 'success',
     // 'info',
     // 'warning',
     // 'danger',
     // 'light',
-    // 'dark'
+    'dark'
   ];
 
   isDark(color: string): boolean {
