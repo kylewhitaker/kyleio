@@ -1,12 +1,15 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 
 import { environment } from '../../../environments/environment';
 
-const customEmailValidator: ValidatorFn = (control) => {
-  return Validators.pattern(/.+@.+\..+/i)(control) && { email: true };
-};
+interface ApiValidationError {
+  location: string;
+  param: string;
+  value: string;
+  msg: string;
+}
 
 @Component({
   selector: 'app-contact-form',
@@ -24,10 +27,10 @@ export class ContactFormComponent {
   ];
 
   contactForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, customEmailValidator]],
-    subject: ['', Validators.required],
-    message: ['', Validators.required]
+    name: [''],
+    email: [''],
+    subject: [''],
+    message: ['']
   });
 
   get name() { return this.contactForm.get('name'); }
@@ -41,14 +44,38 @@ export class ContactFormComponent {
   ) { }
 
   sendEmail(): void {
+
     const baseUrl = environment.production
       ? 'https://enigmatic-lowlands-97259.herokuapp.com'
       : 'http://localhost:8080';
 
     this.http.post(`${baseUrl}/email`, this.contactForm.value).subscribe({
       next: (response) => this.completed.emit(true),
-      error: (err) => this.completed.emit(false)
+      error: (httpError: HttpErrorResponse) => {
+        if (httpError.status === 400 && !!httpError.error && !!httpError.error.validationErrors) {
+          httpError.error.validationErrors.forEach((ve: ApiValidationError) => this.setError(ve));
+        } else {
+          this.completed.emit(false);
+        }
+      }
     });
+
+  }
+
+  private setError(error: ApiValidationError): void {
+    let err = {};
+    switch (error.msg) {
+      case 'required':
+        err = { required: true };
+        break;
+      case 'email':
+        err = { email: true };
+        break;
+      default:
+        break;
+    }
+    const control = this.contactForm.get(error.param);
+    control.setErrors({ ...control.errors, ...err });
   }
 
 }

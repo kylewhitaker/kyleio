@@ -4,10 +4,10 @@
   border-left: 5px solid $primary;
 }
 
-.ng-valid:not(form).ng-dirty {
-  border-left: 5px solid $success
+.ng-valid:not(form) {
+  border-left: 5px solid $primary;
 }
 
-.ng-invalid:not(form).ng-touched {
+.ng-invalid:not(form) {
   border-left: 5px solid $danger;
 }
