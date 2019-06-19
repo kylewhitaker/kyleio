@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AnimatedTypingComponent } from './components/animated-typing/animated-typing.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AnimatedTypingComponent } from './components/animated-typing/animated-t
     HomeComponent,
     JumbotronComponent,
     NavbarComponent,
-    AnimatedTypingComponent
+    AnimatedTypingComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
