@@ -11,6 +11,9 @@ import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AnimatedTypingComponent } from './components/animated-typing/animated-typing.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ContactSuccessComponent } from './components/contact-success/contact-success.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ContactFailureComponent } from './components/contact-failure/contact-failure.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     JumbotronComponent,
     NavbarComponent,
     AnimatedTypingComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ContactSuccessComponent,
+    ContactFormComponent,
+    ContactFailureComponent
   ],
   imports: [
     BrowserModule,

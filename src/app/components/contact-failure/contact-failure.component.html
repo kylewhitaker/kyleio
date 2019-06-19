@@ -1,0 +1,10 @@
+<div style="max-width:600px;margin:auto;">
+  <div class="card text-center mx-5" style="margin-top:100px;">
+    <div class="card-body">
+      <h5 class="card-title text-danger">Error</h5>
+      <p class="card-text text-dark">I'm sorry. Message delivery failed. Please try again.</p>
+      <a class="btn btn-primary text-dark mx-2" routerLink="">Home</a>
+      <a class="btn btn-secondary text-dark mx-2" (click)="retry.emit()">Retry</a>
+    </div>
+  </div>
+</div>
