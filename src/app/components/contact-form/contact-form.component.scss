@@ -11,3 +11,7 @@
 .ng-invalid:not(form) {
   border-left: 5px solid $danger;
 }
+
+:disabled:not(button) {
+  border-left: 5px solid $secondary;
+}

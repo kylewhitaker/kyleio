@@ -45,6 +45,8 @@ export class ContactFormComponent {
 
   sendEmail(): void {
 
+    this.contactForm.disable();
+
     const baseUrl = environment.production
       ? 'https://enigmatic-lowlands-97259.herokuapp.com'
       : 'http://localhost:8080';
@@ -52,6 +54,7 @@ export class ContactFormComponent {
     this.http.post(`${baseUrl}/email`, this.contactForm.value).subscribe({
       next: (response) => this.completed.emit(true),
       error: (httpError: HttpErrorResponse) => {
+        this.contactForm.enable();
         if (httpError.status === 400 && !!httpError.error && !!httpError.error.validationErrors) {
           httpError.error.validationErrors.forEach((ve: ApiValidationError) => this.setError(ve));
         } else {

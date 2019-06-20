@@ -31,7 +31,10 @@
       <textarea id="message" class="form-control" rows="5" formControlName="message" placeholder="Message"></textarea>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary">Send Message</button>
+      <button *ngIf="contactForm.enabled; else sending" type="submit" class="btn btn-primary">Send Message</button>
+      <ng-template #sending>
+        <button type="submit" class="btn btn-secondary" disabled>Sending...</button>
+      </ng-template>
     </div>
   </form>
 </div>
